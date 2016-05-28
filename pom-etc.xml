@@ -61,3 +61,37 @@
                     </includes>
                 </configuration>
             </plugin>
+
+package com.test
+
+import spock.lang.Specification
+import spock.lang.Unroll
+
+class MySpec extends Specification {
+
+    @Unroll  //report iterative executions independently
+    def "test-map-whenThen"(){
+        when: "List of salesforce objects"
+            def sfObjects = ['Account','Contact']
+            def genSrcObjects = ['Account','Contact']
+
+        then: "gen-src object exists in Salesforce.com"
+            genSrcObjects.each {
+                assert sfObjects.contains(it) == true
+            }
+    }
+
+    def "test-mod"() {
+        given: "create the validator object"
+
+        expect: "Validate a URL and see if it is valid"
+        mod(id) == valid
+
+        where:
+        id | valid
+        1  | 3
+        2  | 0
+        3  | 1
+        4  | 0
+    }
+
