@@ -1,3 +1,5 @@
+<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
+
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
